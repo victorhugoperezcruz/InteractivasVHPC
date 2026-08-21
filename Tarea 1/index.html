@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaTech | Tecnología para todos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="encabezado">
+        <div class="contenedor barra">
+            <a class="logo" href="#inicio">Nova<span>Tech</span></a>
+
+            <button class="boton-menu" id="boton-menu" type="button" aria-label="Abrir menú">☰</button>
+
+            <nav class="navegacion" id="navegacion">
+                <a href="#inicio">Inicio</a>
+                <a href="#productos">Productos</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#resenas">Reseñas</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+
+            <button class="carrito" id="carrito" type="button" aria-expanded="false">Carrito (<span
+                    id="contador">0</span>)</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Reemplaza el bloque de la sección hero por este: -->
+        <section class="hero" id="inicio">
+            <div class="contenedor hero-contenido">
+                <div class="hero-texto">
+                    <p class="etiqueta">Tecnología que se adapta a ti</p>
+                    <h1>Mejora tu mundo con productos inteligentes.</h1>
+                    <p>Encuentra dispositivos modernos, prácticos y pensados para acompañarte todos los días.</p>
+                    <a class="boton principal" href="#productos">Ver productos</a>
+                </div>
+                <div class="contenedor-hero-img">
+                    <img class="imagen-hero" src="Gemini_Generated_Image_68id6d68id6d68id.jpg"
+                        alt="Dispositivos y tecnología inteligente NovaTech">
+                </div>
+            </div>
+        </section>
+
+        <section class="categorias">
+            <div class="contenedor categorias-lista">
+                <div><strong>Envíos rápidos</strong><span>Recibe tu pedido en poco tiempo</span></div>
+                <div><strong>Compra segura</strong><span>Tus datos están protegidos</span></div>
+                <div><strong>Soporte cercano</strong><span>Estamos para ayudarte</span></div>
+            </div>
+        </section>
+
+        <section class="seccion" id="productos">
+            <div class="contenedor">
+                <div class="titulo-seccion">
+                    <div>
+                        <p class="etiqueta">Nuestra selección</p>
+                        <h2>Productos destacados</h2>
+                    </div>
+                    <p>Soluciones simples para trabajar, crear y disfrutar.</p>
+                </div>
+
+                <div class="filtros">
+                    <button class="filtro activo" data-categoria="todos" type="button">Todos</button>
+                    <button class="filtro" data-categoria="audio" type="button">Audio</button>
+                    <button class="filtro" data-categoria="hogar" type="button">Hogar</button>
+                    <button class="filtro" data-categoria="movil" type="button">Móvil</button>
+                </div>
+
+                <div class="herramientas-productos">
+                    <input class="buscador" id="buscador" type="search" placeholder="Buscar productos..."
+                        aria-label="Buscar productos">
+                    <select class="ordenar" id="ordenar" aria-label="Ordenar productos">
+                        <option value="destacados">Ordenar: destacados</option>
+                        <option value="menor">Precio: menor a mayor</option>
+                        <option value="mayor">Precio: mayor a menor</option>
+                    </select>
+                </div>
+                <p class="sin-resultados" id="sin-resultados">No encontramos productos con esa búsqueda.</p>
+
+                <div class="productos">
+                    <article class="producto" data-categoria="audio" data-precio="79.99">
+                        <div class="imagen-contenedor">
+                            <img class="producto-img" src="Gemini_Generated_Image_e7mcfke7mcfke7mc.jpg"
+                                alt="Auriculares AirBeat">
+                        </div>
+                        <button class="favorito" type="button"
+                            aria-label="Añadir Auriculares AirBeat a favoritos">♡</button>
+                        <p class="categoria">Audio</p>
+                        <h3>Auriculares AirBeat</h3>
+                        <p>Sonido claro y batería para todo el día.</p>
+                        <div class="producto-pie">
+                            <strong>$79.99</strong>
+                            <button class="agregar" type="button">Agregar</button>
+                        </div>
+                    </article>
+
+                    <article class="producto" data-categoria="hogar" data-precio="45">
+                        <div class="imagen-contenedor">
+                            <img class="producto-img" src="Gemini_Generated_Image_e7mcfke7mcfke7mc (1).jpg"
+                                alt="Lámpara Luma">
+                        </div>
+                        <button class="favorito" type="button" aria-label="Añadir Lámpara Luma a favoritos">♡</button>
+                        <p class="categoria">Hogar</p>
+                        <h3>Lámpara Luma</h3>
+                        <p>Iluminación cálida para cada momento.</p>
+                        <div class="producto-pie">
+                            <strong>$45.00</strong>
+                            <button class="agregar" type="button">Agregar</button>
+                        </div>
+                    </article>
+
+                    <article class="producto" data-categoria="movil" data-precio="129">
+                        <div class="imagen-contenedor">
+                            <img class="producto-img" src="Gemini_Generated_Image_e7mcfke7mcfke7mc (2).jpg"
+                                alt="Reloj Pulse">
+                        </div>
+                        <button class="favorito" type="button" aria-label="Añadir Reloj Pulse a favoritos">♡</button>
+                        <p class="categoria">Móvil</p>
+                        <h3>Reloj Pulse</h3>
+                        <p>Cuida tu tiempo, tu actividad y tu estilo.</p>
+                        <div class="producto-pie">
+                            <strong>$129.00</strong>
+                            <button class="agregar" type="button">Agregar</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion historia" id="nosotros">
+            <div class="contenedor historia-contenido">
+                <div class="imagen-historia-contenedor">
+                    <img class="imagen-historia" src="Gemini_Generated_Image_acjra0acjra0acjr.jpg"
+                        alt="Equipo y filosofía de diseño NovaTech">
+                </div>
+                <div>
+                    <p class="etiqueta">Una forma más fácil de elegir</p>
+                    <h2>Tecnología útil, sin complicaciones.</h2>
+                    <p>En NovaTech seleccionamos productos que combinan buen diseño, funciones útiles y precios
+                        honestos. Queremos que comprar tecnología sea una experiencia clara y agradable.</p>
+                    <a class="boton secundario" href="#contacto">Conoce más</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion resenas" id="resenas">
+            <div class="contenedor">
+                <div class="titulo-seccion centrado">
+                    <div>
+                        <p class="etiqueta">Lo que dicen nuestros clientes</p>
+                        <h2>Reseñas recientes</h2>
+                    </div>
+                </div>
+                <div class="resenas-lista">
+                    <article class="resena">
+                        <p class="estrellas">★★★★★</p>
+                        <p>“El pedido llegó rápido y el producto era exactamente como lo esperaba.”</p><strong>Mariana
+                            G.</strong>
+                    </article>
+                    <article class="resena">
+                        <p class="estrellas">★★★★★</p>
+                        <p>“Me gustó mucho la atención. Me ayudaron a elegir sin intentar venderme de más.”</p>
+                        <strong>Carlos R.</strong>
+                    </article>
+                    <article class="resena">
+                        <p class="estrellas">★★★★☆</p>
+                        <p>“La lámpara quedó perfecta en mi escritorio. Se ve muy bien y es fácil de usar.”</p>
+                        <strong>Lucía P.</strong>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="suscripcion" id="contacto">
+            <div class="contenedor suscripcion-contenido">
+                <div>
+                    <p class="etiqueta">Mantente al día</p>
+                    <h2>Recibe novedades y ofertas.</h2>
+                </div>
+                <form id="formulario">
+                    <input type="email" id="correo" placeholder="Tu correo electrónico"
+                        aria-label="Tu correo electrónico" required>
+                    <button class="boton principal" type="submit">Suscribirme</button>
+                </form>
+                <p class="mensaje" id="mensaje"></p>
+            </div>
+        </section>
+    </main>
+
+    <aside class="panel-carrito" id="panel-carrito" aria-hidden="true">
+        <div class="carrito-cabecera">
+            <h2>Tu carrito</h2>
+            <button class="cerrar-carrito" id="cerrar-carrito" type="button" aria-label="Cerrar carrito">×</button>
+        </div>
+        <div class="carrito-productos" id="carrito-productos"></div>
+        <p class="carrito-vacio" id="carrito-vacio">Todavía no agregas productos.</p>
+        <div class="carrito-total"><span>Total</span><strong id="total">$0.00</strong></div>
+        <button class="boton principal boton-pagar" id="boton-pagar" type="button">Continuar compra</button>
+    </aside>
+    <div class="fondo-carrito" id="fondo-carrito"></div>
+    <p class="aviso" id="aviso" role="status"></p>
+    <button class="volver-arriba" id="volver-arriba" type="button" aria-label="Volver arriba">↑</button>
+
+    <footer class="pie-pagina">
+        <div class="contenedor pie-contenido">
+            <a class="logo" href="#inicio">Nova<span>Tech</span></a>
+            <p>© 2026 NovaTech. Tecnología para todos.</p>
+            <div><a href="#">Instagram</a><a href="#">Facebook</a></div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
