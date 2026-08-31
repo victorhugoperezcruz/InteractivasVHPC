@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comic Store | Tienda de comics</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#inicio">
+                <i class="bi bi-book-half text-warning"></i> Comic Store
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#catalogo">Catálogo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorías</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#catalogo">Héroes</a></li>
+                            <li><a class="dropdown-item" href="#manga">Manga</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#preguntas">Preguntas frecuentes</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main id="inicio" class="container py-4">
+        <section id="carrusel" class="mb-5">
+            <div id="carruselComic" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000" data-bs-pause="false">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carruselComic" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Primera imagen"></button>
+                    <button type="button" data-bs-target="#carruselComic" data-bs-slide-to="1" aria-label="Segunda imagen"></button>
+                    <button type="button" data-bs-target="#carruselComic" data-bs-slide-to="2" aria-label="Tercera imagen"></button>
+                </div>
+                <div class="carousel-inner rounded">
+                    <div class="carousel-item active">
+                        <!-- IMAGEN DEL CARRUSEL 1: escribe aqui la ruta de la imagen -->
+                        <img src="src/wp3449382-alex-ross-wallpaper-hd.jpg" class="d-block w-100" alt="Portada de comic Marvel o DC">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded">
+                            <h1>Historias que caben en tus manos</h1>
+                            <p>Encuentra tu próximo comic favorito.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <!-- IMAGEN DEL CARRUSEL 2: escribe aqui la ruta de la imagen -->
+                        <img src="src/wp3449384-alex-ross-wallpaper-hd.jpg" class="d-block w-100" alt="Portada de comic Marvel o DC">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded">
+                            <h2>Nuevas aventuras cada semana</h2>
+                            <p>Explora mundos llenos de imaginación.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <!-- IMAGEN DEL CARRUSEL 3: escribe aqui la ruta de la imagen -->
+                        <img src="src/1369887.jpeg" class="d-block w-100" alt="Portada de comic Marvel o DC">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded">
+                            <h2>Clásicos para coleccionar</h2>
+                            <p>Ediciones para lectores de todas las edades.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carruselComic" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carruselComic" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
+        </section>
+
+        <section id="manga" class="py-4">
+            <div class="alert alert-info" role="alert">
+                <h2 class="h4"><i class="bi bi-book me-2"></i>Sección de manga</h2>
+                <p class="mb-3">Descubre historias japonesas de acción, aventura y fantasía para todos los lectores.</p>
+                <div class="d-flex gap-2 flex-wrap">
+                    <span class="badge text-bg-dark">Shonen</span>
+                    <span class="badge text-bg-danger">Seinen</span>
+                    <span class="badge text-bg-warning">Shojo</span>
+                    <span class="badge text-bg-success">Nuevos tomos</span>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <!-- IMAGEN DE NARUTO: escribe aqui la ruta de la portada -->
+                        <img src="src/images.jpg" class="card-img-top" alt="Portada del manga Naruto">
+                        <div class="card-body">
+                            <span class="badge text-bg-success mb-2">Disponible</span>
+                            <h3 class="card-title h5">Naruto</h3>
+                            <p class="card-text mb-0">Una aventura ninja llena de amistad, esfuerzo y acción.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <!-- IMAGEN DE ONE PIECE: escribe aqui la ruta de la portada -->
+                        <img src="src/Volumen_25.webp" class="card-img-top" alt="Portada del manga One Piece">
+                        <div class="card-body">
+                            <span class="badge text-bg-primary mb-2">Nuevo tomo</span>
+                            <h3 class="card-title h5">One Piece</h3>
+                            <p class="card-text mb-0">Una travesía de piratas en busca del tesoro legendario.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <!-- IMAGEN DE DRAGON BALL: escribe aqui la ruta de la portada -->
+                        <img src="src/51I4JAmfwZL.jpg" class="card-img-top" alt="Portada del manga Dragon Ball">
+                        <div class="card-body">
+                            <span class="badge text-bg-warning mb-2">Edición especial</span>
+                            <h3 class="card-title h5">Dragon Ball</h3>
+                            <p class="card-text mb-0">Combates, energía y aventuras para coleccionar.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="alert alert-warning d-flex align-items-center" role="alert">
+            <i class="bi bi-stars fs-4 me-3"></i>
+            <div><strong>Selección de la semana:</strong> descubre historias nuevas y clásicos imprescindibles.</div>
+        </div>
+
+        <section id="catalogo" class="py-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2 class="mb-0">Catálogo destacado</h2>
+                <span class="badge text-bg-dark">3 favoritos</span>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <!-- IMAGEN DE SPIDER-MAN: escribe aqui la ruta de la portada -->
+                        <img src="src/6420e3ce566b4ff3a4b5a9d15c5c7005.jpg" class="card-img-top" alt="Portada del comic The Amazing Spider-Man">
+                        <div class="card-body d-flex flex-column">
+                            <span class="badge text-bg-primary align-self-start mb-2">Nuevo</span>
+                            <h3 class="card-title h5">The Amazing Spider-Man</h3>
+                            <p class="card-text">Una colección de aventuras del héroe de Marvel.</p>
+                            <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modalGuardianes">Ver detalles</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <!-- IMAGEN DE BATMAN: escribe aqui la ruta de la portada -->
+                        <img src="src/qasdc001v01_1200.webp" class="card-img-top" alt="Portada del comic Absolute Batman">
+                        <div class="card-body d-flex flex-column">
+                            <span class="badge text-bg-success align-self-start mb-2">Disponible</span>
+                            <h3 class="card-title h5">Batman: Detective Comics</h3>
+                            <p class="card-text">Misterios y aventuras del héroe de DC Comics.</p>
+                            <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modalDetective">Ver detalles</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <!-- IMAGEN DE WONDER WOMAN: escribe aqui la ruta de la portada -->
+                        <img src="src/91QJ6PryOGL._UF1000,1000_QL80_.jpg" class="card-img-top" alt="Portada del comic Absolute Wonder Woman">
+                        <div class="card-body d-flex flex-column">
+                            <span class="badge text-bg-danger align-self-start mb-2">Últimas copias</span>
+                            <h3 class="card-title h5">Wonder Woman</h3>
+                            <p class="card-text">Una historia de fuerza y justicia de DC Comics.</p>
+                            <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modalReino">Ver detalles</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="nosotros" class="py-4">
+            <h2 class="mb-3">Conoce Comic Store</h2>
+            <ul class="nav nav-tabs" id="informacionTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#historia" type="button">Nuestra historia</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#coleccion" type="button">Colecciones</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#envios" type="button">Envíos</button>
+                </li>
+            </ul>
+            <div class="tab-content bg-white border border-top-0 p-4">
+                <div class="tab-pane fade show active" id="historia"><h3 class="h5">Un espacio para lectores</h3><p>Comic Store reúne historias de Marvel y DC para compartir, descubrir y coleccionar.</p><p class="mb-0">Nuestra selección incluye novedades, clásicos y ediciones especiales para lectores principiantes y coleccionistas.</p></div>
+                <div class="tab-pane fade" id="coleccion"><h3 class="h5">Para todos los gustos</h3><p>Explora superhéroes, sagas clásicas, manga y novelas gráficas.</p><div class="d-flex gap-2 flex-wrap"><span class="badge text-bg-primary">Marvel</span><span class="badge text-bg-danger">DC Comics</span><span class="badge text-bg-dark">Manga</span></div></div>
+                <div class="tab-pane fade" id="envios"><h3 class="h5">Preparamos tu pedido</h3><p>Todos los comics se preparan con cuidado para llegar listos a tu estantería.</p><p class="mb-0">Consulta la disponibilidad de cada título en su etiqueta de estado.</p></div>
+            </div>
+        </section>
+
+        <section id="preguntas" class="py-4">
+            <h2 class="mb-3">Preguntas frecuentes</h2>
+            <div class="accordion" id="preguntasAccordion">
+                <div class="accordion-item">
+                    <h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#respuestaUno">¿Qué tipos de comics tienen?</button></h3>
+                    <div id="respuestaUno" class="accordion-collapse collapse show" data-bs-parent="#preguntasAccordion"><div class="accordion-body">Encontrarás comics de héroes, manga, fantasía, ciencia ficción y clásicos.</div></div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#respuestaDos">¿Los productos son nuevos?</button></h3>
+                    <div id="respuestaDos" class="accordion-collapse collapse" data-bs-parent="#preguntasAccordion"><div class="accordion-body">Sí. Esta página muestra una selección de productos nuevos y ediciones para coleccionar.</div></div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#respuestaTres">¿Puedo visitar la tienda?</button></h3>
+                    <div id="respuestaTres" class="accordion-collapse collapse" data-bs-parent="#preguntasAccordion"><div class="accordion-body">Por ahora esta es una muestra estática de la tienda y su catálogo.</div></div>
+                </div>
+            </div>
+        </section>
+
+        <nav class="mt-4" aria-label="Paginación del catálogo">
+            <ul class="pagination justify-content-center">
+                <li class="page-item"><a class="page-link" href="#inicio">Anterior</a></li>
+                <li class="page-item active" aria-current="page"><a class="page-link" href="#catalogo">1</a></li>
+                <li class="page-item"><a class="page-link" href="#nosotros">2</a></li>
+                <li class="page-item"><a class="page-link" href="#preguntas">3</a></li>
+                <li class="page-item"><a class="page-link" href="#preguntas">Siguiente</a></li>
+            </ul>
+        </nav>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <p class="mb-0"><i class="bi bi-book-half text-warning"></i> Comic Store | Tienda de historias</p>
+    </footer>
+
+    <div class="modal fade" id="modalGuardianes" tabindex="-1" aria-labelledby="tituloGuardianes" aria-hidden="true">
+        <div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h2 class="modal-title h5" id="tituloGuardianes">The Amazing Spider-Man</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></div><div class="modal-body">Comic de Marvel. Estado: <span class="badge text-bg-primary">Nuevo</span></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button></div></div></div>
+    </div>
+    <div class="modal fade" id="modalDetective" tabindex="-1" aria-labelledby="tituloDetective" aria-hidden="true">
+        <div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h2 class="modal-title h5" id="tituloDetective">Batman: Detective Comics</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></div><div class="modal-body">Comic de misterio y acción de DC Comics.</div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button></div></div></div>
+    </div>
+    <div class="modal fade" id="modalReino" tabindex="-1" aria-labelledby="tituloReino" aria-hidden="true">
+        <div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h2 class="modal-title h5" id="tituloReino">Wonder Woman</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></div><div class="modal-body">Una aventura de fuerza y justicia de DC Comics.</div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button></div></div></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
