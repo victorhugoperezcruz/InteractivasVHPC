@@ -1,0 +1,41 @@
+<section>
+	<header>
+		<h2 class="text-lg font-black text-stone-900">
+			Actualizar contraseña
+		</h2>
+		<p class="mt-1 text-sm text-stone-500">
+			Usa una contraseña larga y segura.
+		</p>
+	</header>
+	<form method="post" action="{{ route('password.update') }}" class="mt-6 space-y-5">
+		@csrf
+		@method('put')
+		<div>
+			<x-input-label for="update_password_current_password" :value="__('Contraseña actual')" />
+			<x-campo-password id="update_password_current_password" name="current_password" class="mt-1" autocomplete="current-password" />
+			<x-input-error :messages="$errors->updatePassword->get('current_password')" class="mt-2" />
+		</div>
+		<div>
+			<x-input-label for="update_password_password" :value="__('Nueva contraseña')" />
+			<x-campo-password id="update_password_password" name="password" contador minimo="8" class="mt-1" autocomplete="new-password" />
+			<x-input-error :messages="$errors->updatePassword->get('password')" class="mt-2" />
+		</div>
+		<div>
+			<x-input-label for="update_password_password_confirmation" :value="__('Confirmar contraseña')" />
+			<x-campo-password id="update_password_password_confirmation" name="password_confirmation" class="mt-1" autocomplete="new-password" />
+			<x-input-error :messages="$errors->updatePassword->get('password_confirmation')" class="mt-2" />
+		</div>
+		<div class="flex items-center gap-4">
+			<x-primary-button>Guardar</x-primary-button>
+			@if (session('status') === 'password-updated')
+				<p
+					x-data="{ show: true }"
+					x-show="show"
+					x-transition
+					x-init="setTimeout(() => show = false, 2000)"
+					class="text-sm text-stone-500"
+				>Guardado.</p>
+			@endif
+		</div>
+	</form>
+</section>

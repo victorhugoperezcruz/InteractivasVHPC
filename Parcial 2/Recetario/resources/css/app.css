@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+	}
+	body {
+		text-rendering: optimizeLegibility;
+	}
+	::selection {
+		background-color: rgb(255 237 213);
+		color: rgb(124 45 18);
+	}
+}
+
+@layer components {
+	.campo {
+		display: block;
+		width: 100%;
+		border-radius: 0.9rem;
+		border: 1.5px solid rgb(231 229 228);
+		background-color: rgb(255 255 255);
+		padding: 0.65rem 1rem;
+		font-size: 0.95rem;
+		color: rgb(28 25 23);
+		box-shadow: 0 1px 2px rgb(0 0 0 / 0.04);
+		transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+	}
+	.campo::placeholder {
+		color: rgb(168 162 158);
+	}
+	.campo:hover {
+		border-color: rgb(253 186 116);
+	}
+	.campo:focus {
+		outline: none;
+		border-color: rgb(249 115 22);
+		box-shadow: 0 0 0 4px rgb(255 237 213);
+	}
+	.combo {
+		display: block;
+		width: 100%;
+		border-radius: 0.9rem;
+		border: 1.5px solid rgb(231 229 228);
+		background-color: rgb(255 251 235);
+		padding: 0.65rem 2.5rem 0.65rem 1rem;
+		font-size: 0.95rem;
+		font-weight: 600;
+		color: rgb(28 25 23);
+		cursor: pointer;
+		appearance: none;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M5 7l5 5 5-5' stroke='%23ea580c' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+		background-repeat: no-repeat;
+		background-position: right 0.9rem center;
+		box-shadow: 0 1px 2px rgb(0 0 0 / 0.04);
+		transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+	}
+	.combo:hover {
+		border-color: rgb(253 186 116);
+		background-color: rgb(255 247 237);
+	}
+	.combo:focus {
+		outline: none;
+		border-color: rgb(249 115 22);
+		box-shadow: 0 0 0 4px rgb(255 237 213);
+		background-color: rgb(255 255 255);
+	}
+	.etiqueta {
+		display: block;
+		font-size: 0.8rem;
+		font-weight: 800;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: rgb(87 83 78);
+		margin-bottom: 0.35rem;
+	}
+	.ayuda {
+		margin-top: 0.35rem;
+		font-size: 0.8rem;
+		color: rgb(120 113 108);
+	}
+	.btn-primario {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+		background-image: linear-gradient(to right, rgb(234 88 12), rgb(220 38 38));
+		color: rgb(255 255 255);
+		font-weight: 800;
+		padding: 0.7rem 1.7rem;
+		border-radius: 9999px;
+		box-shadow: 0 10px 20px -8px rgb(234 88 12 / 0.5);
+		transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+	}
+	.btn-primario:hover {
+		filter: brightness(1.07);
+		transform: translateY(-1px);
+		box-shadow: 0 14px 26px -8px rgb(234 88 12 / 0.55);
+	}
+	.btn-primario:active {
+		transform: translateY(0);
+	}
+	.btn-oscuro {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		background-color: rgb(28 25 23);
+		color: rgb(255 255 255);
+		font-weight: 800;
+		padding: 0.7rem 1.4rem;
+		border-radius: 0.9rem;
+		transition: background-color 0.18s ease, transform 0.18s ease;
+	}
+	.btn-oscuro:hover {
+		background-color: rgb(68 64 60);
+		transform: translateY(-1px);
+	}
+	.btn-claro {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		background-color: rgb(255 255 255);
+		color: rgb(68 64 60);
+		font-weight: 800;
+		padding: 0.7rem 1.4rem;
+		border-radius: 0.9rem;
+		border: 1.5px solid rgb(231 229 228);
+		transition: background-color 0.18s ease, transform 0.18s ease;
+	}
+	.btn-claro:hover {
+		background-color: rgb(245 245 244);
+		transform: translateY(-1px);
+	}
+	.tarjeta {
+		background-color: rgb(255 255 255);
+		border: 1px solid rgb(255 237 213);
+		border-radius: 1.5rem;
+		box-shadow: 0 20px 40px -20px rgb(124 45 18 / 0.18);
+	}
+}
