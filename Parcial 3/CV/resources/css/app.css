@@ -1,0 +1,257 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../views/**/*.blade.php';
+
+@theme {
+    --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', Courier, monospace;
+    --font-sans: 'Space Grotesk', 'Instrument Sans', system-ui, -apple-system, sans-serif;
+    --color-neo-yellow: #FFE600;
+    --color-neo-cyan: #00F0FF;
+    --color-neo-pink: #FF3366;
+    --color-neo-green: #00FF66;
+    --color-neo-purple: #B288FF;
+    --color-neo-orange: #FF6E3A;
+    --color-neo-bg: #F4EEDD;
+}
+
+@layer utilities {
+    .neo-box {
+        border: 3px solid #000;
+        box-shadow: 5px 5px 0px 0px #000;
+        transition: all 0.15s ease-in-out;
+    }
+    
+    .neo-box-sm {
+        border: 2px solid #000;
+        box-shadow: 3px 3px 0px 0px #000;
+        transition: all 0.15s ease-in-out;
+    }
+    
+    .neo-box-lg {
+        border: 4px solid #000;
+        box-shadow: 8px 8px 0px 0px #000;
+        transition: all 0.15s ease-in-out;
+    }
+
+    .neo-btn {
+        border: 3px solid #000;
+        box-shadow: 4px 4px 0px 0px #000;
+        font-weight: 800;
+        transition: all 0.12s ease-in-out;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    
+    .neo-btn:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 6px 6px 0px 0px #000;
+    }
+    
+    .neo-btn:active {
+        transform: translate(2px, 2px);
+        box-shadow: 1px 1px 0px 0px #000;
+    }
+
+    .neo-btn-sm {
+        border: 2px solid #000;
+        box-shadow: 3px 3px 0px 0px #000;
+        font-weight: 700;
+        transition: all 0.12s ease-in-out;
+        cursor: pointer;
+    }
+    .neo-btn-sm:hover {
+        transform: translate(-1px, -1px);
+        box-shadow: 4px 4px 0px 0px #000;
+    }
+    .neo-btn-sm:active {
+        transform: translate(1px, 1px);
+        box-shadow: 1px 1px 0px 0px #000;
+    }
+
+    .neo-tag {
+        border: 2px solid #000;
+        box-shadow: 2px 2px 0px 0px #000;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        letter-spacing: 0.05em;
+        padding: 0.2rem 0.55rem;
+        display: inline-flex;
+        align-items: center;
+    }
+}
+
+/* Custom Scrollbar for Neo-brutalism */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+::-webkit-scrollbar-track {
+    background: #F4EEDD;
+    border-left: 2px solid #000;
+}
+::-webkit-scrollbar-thumb {
+    background: #000;
+    border: 2px solid #FFE600;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #FF3366;
+}
+
+/* Livewire Navigation Progress Bar */
+#nav-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #FF3366, #FFE600, #00F0FF);
+    z-index: 99999;
+    box-shadow: 0 0 10px rgba(255, 51, 102, 0.7);
+    transition: opacity 0.2s ease;
+}
+
+/* Matrix Mode - Cyberpunk Terminal Dark Theme */
+body.matrix-mode {
+    background-color: #040905 !important;
+    background-image: radial-gradient(rgba(0, 255, 102, 0.2) 1.2px, transparent 1.2px) !important;
+    background-size: 24px 24px !important;
+    color: #00ff66 !important;
+}
+
+/* Force readable glowing matrix typography on all child elements */
+body.matrix-mode,
+body.matrix-mode h1,
+body.matrix-mode h2,
+body.matrix-mode h3,
+body.matrix-mode h4,
+body.matrix-mode h5,
+body.matrix-mode h6,
+body.matrix-mode p,
+body.matrix-mode span,
+body.matrix-mode div,
+body.matrix-mode li,
+body.matrix-mode a,
+body.matrix-mode strong,
+body.matrix-mode b,
+body.matrix-mode label,
+body.matrix-mode input,
+body.matrix-mode select,
+body.matrix-mode textarea,
+body.matrix-mode kbd,
+body.matrix-mode button {
+    color: #00ff66 !important;
+}
+
+/* Secondary & muted text contrast in matrix mode */
+body.matrix-mode .text-gray-400,
+body.matrix-mode .text-gray-500,
+body.matrix-mode .text-gray-600,
+body.matrix-mode .text-gray-700,
+body.matrix-mode .text-gray-800,
+body.matrix-mode .text-gray-900,
+body.matrix-mode .text-neutral-400,
+body.matrix-mode .text-black,
+body.matrix-mode .text-pink-100 {
+    color: #8af7b4 !important;
+}
+
+/* High-contrast highlights in matrix mode */
+body.matrix-mode .text-\[\#FF3366\],
+body.matrix-mode .text-\[\#FFE600\],
+body.matrix-mode .text-\[\#00F0FF\] {
+    color: #55ff77 !important;
+    text-shadow: 0 0 8px rgba(0, 255, 102, 0.6);
+}
+
+/* Hero text gradient unclip in matrix mode */
+body.matrix-mode .bg-clip-text {
+    background-clip: unset !important;
+    -webkit-background-clip: unset !important;
+    color: #00ff66 !important;
+    -webkit-text-fill-color: #00ff66 !important;
+    text-shadow: 0 0 12px rgba(0, 255, 102, 0.7);
+}
+
+/* Overwrite ALL white, cream, and vivid color backgrounds */
+body.matrix-mode .bg-white,
+body.matrix-mode .bg-gray-100,
+body.matrix-mode .bg-gray-200,
+body.matrix-mode .bg-gray-300,
+body.matrix-mode .bg-\[\#FFFDF5\],
+body.matrix-mode .bg-\[\#F4EEDD\],
+body.matrix-mode .bg-\[\#FFE600\],
+body.matrix-mode .bg-\[\#00F0FF\],
+body.matrix-mode .bg-\[\#FF3366\],
+body.matrix-mode .bg-\[\#00FF66\],
+body.matrix-mode .bg-\[\#B288FF\],
+body.matrix-mode .neo-box,
+body.matrix-mode .neo-box-sm,
+body.matrix-mode .neo-box-lg,
+body.matrix-mode header,
+body.matrix-mode footer,
+body.matrix-mode aside,
+body.matrix-mode input,
+body.matrix-mode select,
+body.matrix-mode textarea,
+body.matrix-mode [style*="background-color"] {
+    background-color: #091a0e !important;
+    border-color: #00ff66 !important;
+    box-shadow: 4px 4px 0px 0px #00ff66 !important;
+    color: #00ff66 !important;
+}
+
+/* Matrix buttons and tags */
+body.matrix-mode .neo-btn,
+body.matrix-mode .neo-btn-sm,
+body.matrix-mode .neo-tag {
+    background-color: #06150b !important;
+    border-color: #00ff66 !important;
+    color: #00ff66 !important;
+    box-shadow: 3px 3px 0px 0px #00ff66 !important;
+}
+
+body.matrix-mode .neo-btn:hover,
+body.matrix-mode .neo-btn-sm:hover {
+    background-color: #00ff66 !important;
+    color: #000 !important;
+    box-shadow: 5px 5px 0px 0px #00ff66 !important;
+}
+
+body.matrix-mode .neo-btn:hover *,
+body.matrix-mode .neo-btn-sm:hover * {
+    color: #000 !important;
+}
+
+/* Matrix mode borders & lines */
+body.matrix-mode .border-black,
+body.matrix-mode .border-gray-300,
+body.matrix-mode .border-white,
+body.matrix-mode [class*="border-"] {
+    border-color: #00ff66 !important;
+}
+
+/* Matrix mode modal backdrop */
+body.matrix-mode .modal-backdrop {
+    background-color: rgba(3, 10, 5, 0.92) !important;
+}
+
+/* Matrix mode custom scrollbar */
+body.matrix-mode ::-webkit-scrollbar-track {
+    background: #040905 !important;
+    border-left: 2px solid #00ff66 !important;
+}
+body.matrix-mode ::-webkit-scrollbar-thumb {
+    background: #00ff66 !important;
+    border: 2px solid #000 !important;
+}
+
+body.matrix-mode ::selection {
+    background: #00ff66 !important;
+    color: #000 !important;
+}
