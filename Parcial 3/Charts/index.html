@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Comparativa Técnica (10 Gráficas): Chart.js (Canvas) vs ApexCharts (SVG)</title>
+	<!-- Tailwind CSS vía CDN -->
+	<script src="https://cdn.tailwindcss.com"></script>
+	<!-- Estilos personalizados y alturas uniformes -->
+	<link rel="stylesheet" href="css/styles.css">
+	<!-- Chart.js v4+ vía CDN -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+	<!-- ApexCharts v3+ vía CDN -->
+	<script src="https://cdn.jsdelivr.net/npm/apexcharts@3.50.0/dist/apexcharts.min.js"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 antialiased selection:bg-sky-500 selection:text-white">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+		<!-- Encabezado Descriptivo -->
+		<header class="bg-zinc-900/90 border border-slate-800 rounded-2xl p-6 shadow-xl">
+			<div class="space-y-1.5">
+				<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-sky-500/10 text-sky-400 border border-sky-500/20">
+					<span>Benchmark Comparativo: 5 Gráficas Chart.js vs 5 Gráficas ApexCharts</span>
+				</div>
+				<h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+					Chart.js (Canvas) vs ApexCharts (SVG)
+				</h1>
+				<p class="text-sm text-slate-400 max-w-3xl">
+					Comparación lado a lado de 5 tipologías gráficas distintas (Línea, Barras, Área Polar, Dona y Radar) renderizadas en <strong class="text-indigo-300">HTML5 Canvas</strong> frente a <strong class="text-emerald-300">SVG DOM</strong>.
+				</p>
+			</div>
+		</header>
+
+		<!-- Encabezados de Columnas (Izquierda: Chart.js | Derecha: ApexCharts) -->
+		<div class="hidden lg:grid lg:grid-cols-2 gap-6">
+			<div class="bg-indigo-950/30 border border-indigo-500/20 rounded-xl px-5 py-3 flex items-center justify-between">
+				<span class="text-sm font-bold text-indigo-300">Columna Izquierda: Chart.js v4 (5 Gráficas)</span>
+				<span class="text-xs font-mono text-indigo-400">Render: HTML5 Canvas</span>
+			</div>
+			<div class="bg-emerald-950/30 border border-emerald-500/20 rounded-xl px-5 py-3 flex items-center justify-between">
+				<span class="text-sm font-bold text-emerald-300">Columna Derecha: ApexCharts v3 (5 Gráficas)</span>
+				<span class="text-xs font-mono text-emerald-400">Render: SVG</span>
+			</div>
+		</div>
+
+		<!-- Contenedor Principal de los 5 Pares Comparativos (Split-Screen 2 Columnas en Desktop, 1 en Móvil) -->
+		<main class="space-y-8">
+			<!-- =================================================================
+				PAR 1: GRÁFICA DE LÍNEA (LINE CHART)
+				================================================================= -->
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+				<!-- Chart.js #1: Línea -->
+				<section class="bg-zinc-900/90 border border-slate-800 rounded-2xl p-6 shadow-xl flex flex-col justify-between">
+					<div>
+						<div class="flex flex-wrap items-start justify-between gap-3 pb-4 mb-4 border-b border-slate-800">
+							<div>
+								<span class="text-xs font-semibold uppercase tracking-wider text-indigo-400">1. Gráfica de Línea — Chart.js</span>
+								<h2 class="text-lg font-bold text-white mt-0.5">
+									Evolución de Ventas Semestrales (2025 vs 2026)
+								</h2>
+								<p class="text-xs text-slate-400 mt-1">
+									Trazo continuo con curvas de Bézier y marcadores en Canvas 2D para series temporales.
+								</p>
+							</div>
+							<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/15 text-indigo-300 border border-indigo-500/30 shrink-0">
+								Render: HTML5 Canvas
+							</span>
+						</div>
+						<div class="chart-viewport">
+							<canvas id="chartjs-canvas-1" aria-label="Chart.js Gráfica 1: Línea de Ventas Semestrales" role="img"></canvas>
+						</div>
+					</div>
+					<footer class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+						<span>Tipo: Line (Trazo suavizado + Tooltips indexados)</span>
+						<span class="text-slate-500 font-mono">&lt;canvas id="chartjs-canvas-1"&gt;</span>
+					</footer>
+				</section>
+
+				<!-- ApexCharts #1: Línea -->
+				<section class="bg-zinc-900/90 border border-slate-800 rounded-2xl p-6 shadow-xl flex flex-col justify-between">
+					<div>
+						<div class="flex flex-wrap items-start justify-between gap-3 pb-4 mb-4 border-b border-slate-800">
+							<div>
+								<span class="text-xs font-semibold uppercase tracking-wider text-emerald-400">1. Gráfica de Línea — ApexCharts</span>
+								<h2 class="text-lg font-bold text-white mt-0.5">
+									Evolución de Ventas Semestrales (2025 vs 2026)
+								</h2>
+								<p class="text-xs text-slate-400 mt-1">
+									Nodos `&lt;path&gt;` vectoriales en SVG con barra de herramientas nativa para zoom, paneo y exportación.
+								</p>
+							</div>
+							<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 shrink-0">
+								Render: SVG
+							</span>
+						</div>
+						<div class="chart-viewport">
+							<div id="apexcharts-container-1" class="apex-chart-box" aria-label="ApexCharts Gráfica 1: Línea de Ventas Semestrales"></div>
+						</div>
+					</div>
+					<footer class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+						<span>Tipo: Line SVG (Toolbar Zoom/Pan/Export)</span>
+						<span class="text-slate-500 font-mono">&lt;div id="apexcharts-container-1"&gt;</span>
+					</footer>
+				</section>
+			</div>
+
+			<!-- =================================================================
+				PAR 2: GRÁFICA DE BARRAS (BAR CHART)
+				================================================================= -->
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+				<!-- Chart.js #2: Barras -->
+				<section class="bg-zinc-900/90 border border-slate-800 rounded-2xl p-6 shadow-xl flex flex-col justify-between">
+					<div>
+						<div class="flex flex-wrap items-start justify-between gap-3 pb-4 mb-4 border-b border-slate-800">
+							<div>
+								<span class="text-xs font-semibold uppercase tracking-wider text-indigo-400">2. Gráfica de Barras — Chart.js</span>
+								<h2 class="text-lg font-bold text-white mt-0.5">
+									Facturación por Canal (E-Commerce vs Retail)
+								</h2>
+								<p class="text-xs text-slate-400 mt-1">
+									Columnas verticales agrupadas con bordes redondeados renderizadas sobre mapa de bits en Canvas.
+								</p>
+							</div>
+							<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/15 text-indigo-300 border border-indigo-500/30 shrink-0">
+								Render: HTML5 Canvas
+							</span>
+						</div>
+						<div class="chart-viewport">
+							<canvas id="chartjs-canvas-2" aria-label="Chart.js Gráfica 2: Barras de Facturación por Canal" role="img"></canvas>
+						</div>
+					</div>
+					<footer class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+						<span>Tipo: Bar (Columnas agrupadas en Canvas)</span>
+						<span class="text-slate-500 font-mono">&lt;canvas id="chartjs-canvas-2"&gt;</span>
+					</footer>
+				</section>
+
+				<!-- ApexCharts #2: Barras -->
+				<section class="bg-zinc-900/90 border border-slate-800 rounded-2xl p-6 shadow-xl flex flex-col justify-between">
+					<div>
+						<div class="flex flex-wrap items-start justify-between gap-3 pb-4 mb-4 border-b border-slate-800">
+							<div>
+								<span class="text-xs font-semibold uppercase tracking-wider text-emerald-400">2. Gráfica de Barras — ApexCharts</span>
+								<h2 class="text-lg font-bold text-white mt-0.5">
+									Facturación por Canal (E-Commerce vs Retail)
+								</h2>
+								<p class="text-xs text-slate-400 mt-1">
+									Rectángulos vectoriales en SVG con resaltado dinámico de serie al pasar el cursor por la leyenda.
+								</p>
+							</div>
+							<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 shrink-0">
+								Render: SVG
+							</span>
+						</div>
+						<div class="chart-viewport">
+							<div id="apexcharts-container-2" class="apex-chart-box" aria-label="ApexCharts Gráfica 2: Barras de Facturación por Canal"></div>
+						</div>
+					</div>
+					<footer class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+						<span>Tipo: Bar SVG (Exportación PNG/SVG/CSV)</span>
+						<span class="text-slate-500 font-mono">&lt;div id="apexcharts-container-2"&gt;</span>
+					</footer>
+				</section>
+			</div>
+
+			<!-- =================================================================
+				PAR 3: GRÁFICA DE ÁREA POLAR (POLAR AREA CHART)
+				================================================================= -->
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+				<!-- Chart.js #3: Área Polar -->
+				<section class="bg-zinc-900/90 border border-slate-800 rounded-2xl p-6 shadow-xl flex flex-col justify-between">
+					<div>
+						<div class="flex flex-wrap items-start justify-between gap-3 pb-4 mb-4 border-b border-slate-800">
+							<div>
+								<span class="text-xs font-semibold uppercase tracking-wider text-indigo-400">3. Gráfica de Área Polar — Chart.js</span>
+								<h2 class="text-lg font-bold text-white mt-0.5">
+									Presupuesto de Inversión por Sector (M USD)
+								</h2>
+								<p class="text-xs text-slate-400 mt-1">
+									Sectores de ángulo uniforme cuyo radio escala proporcionalmente a la inversión asignada en Canvas.
+								</p>
+							</div>
+							<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/15 text-indigo-300 border border-indigo-500/30 shrink-0">
+								Render: HTML5 Canvas
+							</span>
+						</div>
+						<div class="chart-viewport">
+							<canvas id="chartjs-canvas-3" aria-label="Chart.js Gráfica 3: Área Polar de Inversión" role="img"></canvas>
+						</div>
+					</div>
+					<footer class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+						<span>Tipo: PolarArea (Anillos concéntricos radiales)</span>
+						<span class="text-slate-500 font-mono">&lt;canvas id="chartjs-canvas-3"&gt;</span>
+					</footer>
+				</section>
+
+				<!-- ApexCharts #3: Área Polar -->
+				<section class="bg-zinc-900/90 border border-slate-800 rounded-2xl p-6 shadow-xl flex flex-col justify-between">
+					<div>
+						<div class="flex flex-wrap items-start justify-between gap-3 pb-4 mb-4 border-b border-slate-800">
+							<div>
+								<span class="text-xs font-semibold uppercase tracking-wider text-emerald-400">3. Gráfica de Área Polar — ApexCharts</span>
+								<h2 class="text-lg font-bold text-white mt-0.5">
+									Presupuesto de Inversión por Sector (M USD)
+								</h2>
+								<p class="text-xs text-slate-400 mt-1">
+									Cuñas polares vectoriales en SVG con interactividad individual por sector y descarga directa.
+								</p>
+							</div>
+							<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 shrink-0">
+								Render: SVG
+							</span>
+						</div>
+						<div class="chart-viewport">
+							<div id="apexcharts-container-3" class="apex-chart-box" aria-label="ApexCharts Gráfica 3: Área Polar de Inversión"></div>
+						</div>
+					</div>
+					<footer class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+						<span>Tipo: PolarArea SVG (Nodos vectoriales interactivos)</span>
+						<span class="text-slate-500 font-mono">&lt;div id="apexcharts-container-3"&gt;</span>
+					</footer>
+				</section>
+			</div>
+
+			<!-- =================================================================
+				PAR 4: GRÁFICA DE DONA (DOUGHNUT / DONUT CHART)
+				================================================================= -->
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+				<!-- Chart.js #4: Dona -->
+				<section class="bg-zinc-900/90 border border-slate-800 rounded-2xl p-6 shadow-xl flex flex-col justify-between">
+					<div>
+						<div class="flex flex-wrap items-start justify-between gap-3 pb-4 mb-4 border-b border-slate-800">
+							<div>
+								<span class="text-xs font-semibold uppercase tracking-wider text-indigo-400">4. Gráfica de Dona — Chart.js</span>
+								<h2 class="text-lg font-bold text-white mt-0.5">
+									Cuota de Ingresos por Unidad Tecnológica
+								</h2>
+								<p class="text-xs text-slate-400 mt-1">
+									Anillo porcentual con desplazamiento (`hoverOffset`) al pasar el ratón y ocultación de segmentos.
+								</p>
+							</div>
+							<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/15 text-indigo-300 border border-indigo-500/30 shrink-0">
+								Render: HTML5 Canvas
+							</span>
+						</div>
+						<div class="chart-viewport">
+							<canvas id="chartjs-canvas-4" aria-label="Chart.js Gráfica 4: Dona de Cuota de Mercado" role="img"></canvas>
+						</div>
+					</div>
+					<footer class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+						<span>Tipo: Doughnut (Cutout 62% en Canvas)</span>
+						<span class="text-slate-500 font-mono">&lt;canvas id="chartjs-canvas-4"&gt;</span>
+					</footer>
+				</section>
+
+				<!-- ApexCharts #4: Dona -->
+				<section class="bg-zinc-900/90 border border-slate-800 rounded-2xl p-6 shadow-xl flex flex-col justify-between">
+					<div>
+						<div class="flex flex-wrap items-start justify-between gap-3 pb-4 mb-4 border-b border-slate-800">
+							<div>
+								<span class="text-xs font-semibold uppercase tracking-wider text-emerald-400">4. Gráfica de Dona — ApexCharts</span>
+								<h2 class="text-lg font-bold text-white mt-0.5">
+									Cuota de Ingresos por Unidad Tecnológica
+								</h2>
+								<p class="text-xs text-slate-400 mt-1">
+									Segmentos de arco en SVG con indicador central dinámico que totaliza la participación activa.
+								</p>
+							</div>
+							<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 shrink-0">
+								Render: SVG
+							</span>
+						</div>
+						<div class="chart-viewport">
+							<div id="apexcharts-container-4" class="apex-chart-box" aria-label="ApexCharts Gráfica 4: Dona de Cuota de Mercado"></div>
+						</div>
+					</div>
+					<footer class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+						<span>Tipo: Donut SVG con totalizador central</span>
+						<span class="text-slate-500 font-mono">&lt;div id="apexcharts-container-4"&gt;</span>
+					</footer>
+				</section>
+			</div>
+
+			<!-- =================================================================
+				PAR 5: GRÁFICA DE RADAR (RADAR CHART)
+				================================================================= -->
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+				<!-- Chart.js #5: Radar -->
+				<section class="bg-zinc-900/90 border border-slate-800 rounded-2xl p-6 shadow-xl flex flex-col justify-between">
+					<div>
+						<div class="flex flex-wrap items-start justify-between gap-3 pb-4 mb-4 border-b border-slate-800">
+							<div>
+								<span class="text-xs font-semibold uppercase tracking-wider text-indigo-400">5. Gráfica de Radar — Chart.js</span>
+								<h2 class="text-lg font-bold text-white mt-0.5">
+									KPIs de Desempeño Técnico y Operativo
+								</h2>
+								<p class="text-xs text-slate-400 mt-1">
+									Malla poligonal en Canvas comparando 6 dimensiones clave entre 2025 y 2026.
+								</p>
+							</div>
+							<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/15 text-indigo-300 border border-indigo-500/30 shrink-0">
+								Render: HTML5 Canvas
+							</span>
+						</div>
+						<div class="chart-viewport">
+							<canvas id="chartjs-canvas-5" aria-label="Chart.js Gráfica 5: Radar de Desempeño" role="img"></canvas>
+						</div>
+					</div>
+					<footer class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+						<span>Tipo: Radar (Escala radial 40-100 pts)</span>
+						<span class="text-slate-500 font-mono">&lt;canvas id="chartjs-canvas-5"&gt;</span>
+					</footer>
+				</section>
+
+				<!-- ApexCharts #5: Radar -->
+				<section class="bg-zinc-900/90 border border-slate-800 rounded-2xl p-6 shadow-xl flex flex-col justify-between">
+					<div>
+						<div class="flex flex-wrap items-start justify-between gap-3 pb-4 mb-4 border-b border-slate-800">
+							<div>
+								<span class="text-xs font-semibold uppercase tracking-wider text-emerald-400">5. Gráfica de Radar — ApexCharts</span>
+								<h2 class="text-lg font-bold text-white mt-0.5">
+									KPIs de Desempeño Técnico y Operativo
+								</h2>
+								<p class="text-xs text-slate-400 mt-1">
+									Polígonos vectoriales en SVG con exportación directa y resaltado de vértices multi-serie.
+								</p>
+							</div>
+							<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 shrink-0">
+								Render: SVG
+							</span>
+						</div>
+						<div class="chart-viewport">
+							<div id="apexcharts-container-5" class="apex-chart-box" aria-label="ApexCharts Gráfica 5: Radar de Desempeño"></div>
+						</div>
+					</div>
+					<footer class="mt-4 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+						<span>Tipo: Radar SVG con exportación nativa</span>
+						<span class="text-slate-500 font-mono">&lt;div id="apexcharts-container-5"&gt;</span>
+					</footer>
+				</section>
+			</div>
+		</main>
+	</div>
+
+	<!-- Scripts modulares del proyecto (Cargados en orden de dependencia) -->
+	<script src="js/data.js"></script>
+	<script src="js/chartjs-setup.js"></script>
+	<script src="js/apexcharts-setup.js"></script>
+
+	<!-- Inicialización en paralelo de las 10 gráficas -->
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			window.initChartJS();
+			window.initApexChart();
+		});
+	</script>
+</body>
+</html>

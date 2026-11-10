@@ -73,7 +73,7 @@
                 <div class="relative z-10 space-y-4">
                     <div class="flex justify-between items-center border-b-3 border-black pb-3">
                         <span class="font-code font-black text-sm uppercase bg-black text-[#00FF66] px-2 py-0.5">
-                            ID: VILS-UASLP-2026
+                            ID: VHPC-UASLP-INTERACTIVAS-2026/2027-I
                         </span>
                         <span class="font-black text-xs bg-white border-2 border-black px-2 py-0.5">
                             MÉXICO (GMT-6)

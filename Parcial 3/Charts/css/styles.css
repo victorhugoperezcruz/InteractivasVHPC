@@ -1,0 +1,71 @@
+/* ==========================================================================
+	Estilos auxiliares y contenedores de proporción uniforme (5 Pares de Gráficas)
+	Chart.js (Canvas) vs ApexCharts (SVG)
+	========================================================================== */
+
+:root {
+	--chart-viewport-height: 360px;
+	--chart-viewport-height-sm: 300px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	overflow-x: hidden;
+}
+
+/* Contenedor de altura fija uniforme para igualar proporción visual */
+.chart-viewport {
+	position: relative;
+	width: 100%;
+	height: var(--chart-viewport-height);
+	min-height: var(--chart-viewport-height);
+	max-height: var(--chart-viewport-height);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.chart-viewport canvas,
+.chart-viewport .apex-chart-box {
+	width: 100% !important;
+	height: 100% !important;
+}
+
+@media (max-width: 640px) {
+	.chart-viewport {
+		height: var(--chart-viewport-height-sm);
+		min-height: var(--chart-viewport-height-sm);
+		max-height: var(--chart-viewport-height-sm);
+	}
+}
+
+/* Ajustes visuales para la barra de herramientas e interfaz oscura de ApexCharts */
+.apexcharts-canvas {
+	margin: 0 auto;
+}
+
+.apexcharts-toolbar {
+	z-index: 10 !important;
+}
+
+.apexcharts-menu {
+	background: #1e293b !important;
+	border: 1px solid #334155 !important;
+	border-radius: 0.5rem !important;
+	color: #f1f5f9 !important;
+	box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5) !important;
+}
+
+.apexcharts-menu-item:hover {
+	background: #334155 !important;
+	color: #38bdf8 !important;
+}
+
+.apexcharts-tooltip {
+	border-radius: 0.5rem !important;
+	box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.45) !important;
+}
